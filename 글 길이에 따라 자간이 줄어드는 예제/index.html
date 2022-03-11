@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>자간이 변해</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <p id="container">
+        <span class="responsive_span"> Always </span>
+        <span class="responsive_span"> Playing </span>
+        <span class="responsive_span">
+          For Life long text long text long text</span
+        >
+        <span class="responsive_span"> 대한민국</span>
+        <span class="responsive_span"> 도미니카공화국</span>
+      </p>
+    </div>
+    <script>
+      const spans = document.querySelectorAll('.responsive_span');
+      // console.log(spans); // 위 클래스 명을 가진 스팬 배열
+      const container = document.querySelector('#container');
+
+      const stretch = (items, container) => {
+        const containerWidth = container.offsetWidth;
+        // console.log(containerWidth); // 지정한 값
+
+        for (let item of items) {
+          const currentLength = item.innerText.length;
+          // 현재 각 요소의 한글자가 가지고 있는 자리
+          const currentCharWidth = item.offsetWidth / currentLength;
+
+          // 한글자당 가질 수 있는 자리
+          const spaceForChar = containerWidth / currentLength;
+
+          // 이 식의 원리는 모르겠음
+          const charWidth =
+            spaceForChar -
+            currentCharWidth +
+            (spaceForChar - currentCharWidth) / currentLength;
+
+          // 여튼 이 값을 자간 속성에 넣어줌
+          item.style.letterSpacing = charWidth + 'px';
+        }
+      };
+
+      stretch(spans, container);
+    </script>
+  </body>
+</html>
