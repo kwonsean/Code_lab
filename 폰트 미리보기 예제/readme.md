@@ -38,3 +38,8 @@ const handleFontChange = e => {
   fontPreviw.classList.add(selectedFont);
 };
 ```
+
+### 한번에 여러 구글 폰트 가져오기
+
+`@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Anton|Kaushan+Script|Rochester|Sacramento|Lobster');`
+처럼 | 를 이용해서 연결연결하면 사용 가능 font-family 적용시 구글 폰트에 나와있는 예시 참고
