@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폰트 프리뷰</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Font Tester</h1>
+      <fieldset class="fontForm grid">
+        <div class="grid-cell size1of2">
+          <label for="fontsSelectBox">Choose Font</label>
+          <select id="fontsSelectBox" name="fontsSelectBox">
+            <option value="openSans">Open Sans</option>
+            <option value="oswald">Oswald</option>
+            <option value="anton">Anton</option>
+            <option value="kaushanScript">Kaushan Script</option>
+            <option value="rochester">Rochester</option>
+            <option value="sacramento">Sacramento</option>
+          </select>
+        </div>
+
+        <div class="grid-cell size1of2">
+          <label for="fontSizeSelectBox">Choose Size</label>
+          <select id="fontSizeSelectBox" name="fontSizeSelectBox">
+            <option value="font-size-16">16</option>
+            <option value="font-size-20">20</option>
+            <option value="font-size-40">40</option>
+            <option value="font-size-72">72</option>
+            <option value="font-size-92">92</option>
+          </select>
+        </div>
+
+        <div class="grid-cell size1of1">
+          <label for="uppercase" class="checkbox-label"
+            ><input
+              type="radio"
+              name="fontStyle"
+              value="uppercase"
+              id="uppercase"
+            />
+            Uppercase</label
+          >
+          <label for="lowercase" class="checkbox-label"
+            ><input
+              type="radio"
+              name="fontStyle"
+              value="lowercase"
+              id="lowercase"
+            />
+            Lowercase</label
+          >
+          <label for="capitalize" class="checkbox-label"
+            ><input
+              type="radio"
+              name="fontStyle"
+              value="capitalize"
+              id="capitalize"
+            />
+            Capitalize</label
+          >
+          <label for="normal" class="checkbox-label"
+            ><input
+              type="radio"
+              name="fontStyle"
+              value="normal"
+              id="normal"
+              checked
+            />
+            Normal</label
+          >
+        </div>
+      </fieldset>
+
+      <div class="grid-cell">
+        <input
+          type="text"
+          name="fontTxtField"
+          id="fontTxtField"
+          placeholder="Your text here"
+        />
+      </div>
+    </div>
+  </body>
+</html>
