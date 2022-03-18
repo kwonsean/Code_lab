@@ -10,6 +10,7 @@ const fontList = [
   'kaushanScript',
   'rochester',
   'sacramento',
+  'Ole',
 ];
 
 const fontSizeList = [
