@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Anton|Kaushan+Script|Rochester|Sacramento|Ole|Hi+Melody');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Anton|Kaushan+Script|Rochester|Sacramento|Ole|Hi+Melody=fallback|Gothic+A1:wght@400;600;900'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap'); */
+
+/* neonderthaw-regular - latin */
+@font-face {
+  font-family: 'Neonderthaw';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/neonderthaw-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('./fonts/neonderthaw-v1-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('./fonts/neonderthaw-v1-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */ url('./fonts/neonderthaw-v1-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */ url('./fonts/neonderthaw-v1-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./fonts/neonderthaw-v1-latin-regular.svg#Neonderthaw') format('svg'); /* Legacy iOS */
+}
+
+* {
+  font-family: 'Neonderthaw';
+}
 
 .openSans {
   font-family: 'Open Sans', sans-serif;
