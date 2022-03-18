@@ -3,6 +3,15 @@ const fontSizeSelectBox = document.getElementById('fontSizeSelectBox');
 const fontsSelectBox = document.getElementById('fontsSelectBox');
 const chekboxList = document.getElementsByClassName('checkbox-label');
 
+const fontarr = [];
+for (let i = 0; i < fontsSelectBox.children.length; i++) {
+  fontarr.push(fontsSelectBox.children[i].value);
+}
+console.log(fontarr);
+
+const fontarr2 = [...fontsSelectBox.children].map(item => item.value);
+console.log(fontarr2);
+
 const fontList = [
   'openSans',
   'oswald',
