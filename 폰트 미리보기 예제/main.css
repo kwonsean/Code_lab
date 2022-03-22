@@ -1,28 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Anton|Kaushan+Script|Rochester|Sacramento|Ole|Hi+Melody=fallback|Gothic+A1:wght@400;600;900'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap'); */
-
-/* neonderthaw-regular - latin */
-@font-face {
-  font-family: 'Neonderthaw';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/neonderthaw-v1-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-    url('./fonts/neonderthaw-v1-latin-regular.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('./fonts/neonderthaw-v1-latin-regular.woff2')
-      format('woff2'),
-    /* Super Modern Browsers */ url('./fonts/neonderthaw-v1-latin-regular.woff')
-      format('woff'),
-    /* Modern Browsers */ url('./fonts/neonderthaw-v1-latin-regular.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */
-      url('./fonts/neonderthaw-v1-latin-regular.svg#Neonderthaw') format('svg'); /* Legacy iOS */
-}
-
-* {
-  font-family: 'Neonderthaw';
-}
+/* google earlyaccess */
+/* @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); */
 
 .openSans {
   font-family: 'Open Sans', sans-serif;
@@ -45,7 +24,6 @@
 
 .Ole {
   font-family: 'Ole', 'Hi Melody', cursive;
-  font-size: 40px;
 }
 
 .uppercase-text {
@@ -61,6 +39,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
 .wrapper {
   padding: 10px;
 }
@@ -79,7 +58,7 @@ label {
 }
 
 input {
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
   padding: 0;
   font-size: 24px;
   border: 0;
@@ -97,7 +76,6 @@ input {
 .grid {
   margin: -10px;
   padding: 0;
-  letter-spacing: -0.286em;
   position: relative;
 }
 
@@ -141,4 +119,66 @@ input {
 
 h2 {
   margin: 10px 0 0 0;
+}
+
+ul {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  justify-content: unset;
+  align-items: unset;
+  width: 30%;
+  display: none;
+  margin-left: 10px;
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: 3px 4px 4px rgb(236, 236, 236);
+  border-radius: 5px;
+  user-select: none;
+  z-index: 1;
+  position: absolute;
+}
+
+li {
+  padding: 2px 5px;
+  list-style: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+li:hover {
+  background-color: aliceblue;
+}
+
+.font__itemActive {
+  background-color: rgb(217, 237, 255);
+}
+
+.font__selected {
+  position: relative;
+  background-color: lightcyan;
+  border-radius: 5px;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  cursor: pointer;
+  border: 1px solid gray;
+  margin-left: 10px;
+}
+
+.font__selected::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  right: 10px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid gray;
+  border-left: 2px solid gray;
+  transform: rotate(-135deg);
+}
+
+#fontsSelectBox {
+  position: absolute;
+  left: -99999px;
 }

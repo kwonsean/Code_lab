@@ -2,6 +2,9 @@ const fontPreviw = document.getElementById('fontTxtField');
 const fontSizeSelectBox = document.getElementById('fontSizeSelectBox');
 const fontsSelectBox = document.getElementById('fontsSelectBox');
 const chekboxList = document.getElementsByClassName('checkbox-label');
+const fakeFontBox = document.getElementsByClassName('font__list')[0];
+const fakeFontSelected = document.getElementsByClassName('font__selected')[0];
+const fakeFontBoxLiList = fakeFontBox.children;
 
 const fontarr = [];
 for (let i = 0; i < fontsSelectBox.children.length; i++) {
@@ -36,8 +39,30 @@ const fontTransformList = [
   'capitalize-text',
 ];
 
+const handleFakeFontSelected = () => {
+  fakeFontBox.style.display === 'block'
+    ? (fakeFontBox.style.display = 'none')
+    : (fakeFontBox.style.display = 'block');
+};
+
+const handleFakeFontChange = item => {
+  const { value } = item.dataset;
+  fontsSelectBox.value = value;
+  const selectedFont = value;
+  fakeFontSelected.innerText = value;
+  fontPreviw.classList.remove(...fontList);
+  fontPreviw.classList.add(selectedFont);
+
+  for (let i of fakeFontBoxLiList) {
+    i.classList.remove('font__itemActive');
+  }
+  item.classList.add('font__itemActive');
+  fakeFontBox.style.display = 'none';
+};
+
 const handleFontChange = e => {
   const selectedFont = e.target.value;
+  fakeFontSelected.innerText = e.target.value;
   fontPreviw.classList.remove(...fontList);
   fontPreviw.classList.add(selectedFont);
 };
@@ -73,6 +98,14 @@ const handleFontTransform = e => {
     ? null
     : fontPreviw.classList.add(selectedFontTransformClassName);
 };
+
+fakeFontSelected.addEventListener('click', handleFakeFontSelected);
+
+for (let i = 0; i < fakeFontBoxLiList.length; i++) {
+  fakeFontBoxLiList[i].addEventListener('click', () =>
+    handleFakeFontChange(fakeFontBoxLiList[i])
+  );
+}
 
 for (let i = 0; i < chekboxList.length; i++) {
   chekboxList[i].addEventListener('click', handleFontTransform);

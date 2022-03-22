@@ -5,13 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>폰트 프리뷰</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap"
       rel="stylesheet"
     /> -->
-    <link rel="stylesheet" href="main.css" />
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Sacramento|Rochester|Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight|Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@400;700&family=Noto+Serif:ital,wght@1,400;1,700&display=swap"
+      as="style"
+      onload="this.onload=null; this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="main.css"
+      onload="this.onload=null; this.rel='stylesheet'"
+    />
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+
     <script src="main.js" defer></script>
   </head>
   <body>
@@ -30,6 +44,25 @@
             <option value="Ole">Ole</option>
           </select>
         </div>
+        <div class="font__selected">Open Sans</div>
+        <ul class="font__list">
+          <li
+            class="font__item font__itemActive openSans"
+            data-value="openSans"
+          >
+            Open Sans
+          </li>
+          <li class="font__item oswald" data-value="oswald">Oswald</li>
+          <li class="font__item anton" data-value="anton">Anton</li>
+          <li class="font__item kaushanScript" data-value="kaushanScript">
+            Kaushan Script
+          </li>
+          <li class="font__item rochester" data-value="rochester">Rochester</li>
+          <li class="font__item sacramento" data-value="sacramento">
+            Sacramento
+          </li>
+          <li class="font__item Ole" data-value="Ole">Ole</li>
+        </ul>
 
         <div class="grid-cell size1of2">
           <label for="fontSizeSelectBox">Choose Size</label>
@@ -82,7 +115,7 @@
           >
         </div>
       </fieldset>
-
+      <br /><br /><br />
       <h2>PREVIEW</h2>
       <div class="grid-cell">
         <input
