@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소수점</title>
+  </head>
+  <body>
+    <h3 id="result"></h3>
+    <label for="test">Number TEST</label>
+    <input type="number" id="test" />
+    <button onclick="handleClick()">TEST</button>
+    <button onclick="handleNumber(0.1)">+1</button>
+    <button onclick="handleNumber(-0.1)">-1</button>
+    <script>
+      const result = document.getElementById('result');
+      const inputEl = document.getElementById('test');
+      const data = { point: '' };
+
+      const handleClick = () => {
+        const value = Number(inputEl.value).toFixed(1);
+        // 음수 방어코드
+        if (value < 0) {
+          data.point = '0.0';
+          result.innerText = data.point;
+          return;
+        }
+
+        if (isFloat(value)) {
+          const valueList = value.split('.');
+          const calcResult = checkValue(valueList);
+          data.point = calcResult;
+        } else {
+          data.point = value;
+        }
+        result.innerText = data.point;
+      };
+
+      const checkValue = valueList => {
+        const firstValue = Number(valueList[0]);
+        const lastValue = Number(valueList[1]);
+        if (lastValue < 6) {
+          return valueList.join('.');
+        } else {
+          const left = lastValue % 6;
+          return `${firstValue + 1}.${left}`;
+        }
+      };
+
+      const isFloat = n => {
+        return n % 1 !== 0;
+      };
+
+      const handleNumber = diff => {
+        const isPlus = diff > 0 ? true : false;
+        const point = (Number(data.point) + diff).toFixed(1);
+        const dataList = point.split('.');
+        const firstValue = Number(dataList[0]);
+        const lastValue = Number(dataList[1]);
+        // 음수 방어코드
+        if (point < 0) {
+          data.point = '0.0';
+          result.innerText = data.point;
+          return;
+        }
+        if (isPlus) {
+          const calcResult = checkValue(dataList);
+          data.point = calcResult;
+        } else {
+          if (lastValue < 6) {
+            data.point = point;
+          } else if (lastValue === 9) {
+            data.point = `${firstValue}.5`;
+          }
+        }
+        result.innerText = data.point;
+      };
+    </script>
+  </body>
+</html>
