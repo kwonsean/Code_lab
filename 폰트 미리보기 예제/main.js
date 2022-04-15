@@ -1,9 +1,9 @@
-const fontPreviw = document.getElementById('fontTxtField');
-const fontSizeSelectBox = document.getElementById('fontSizeSelectBox');
-const fontsSelectBox = document.getElementById('fontsSelectBox');
-const chekboxList = document.getElementsByClassName('checkbox-label');
-const fakeFontBox = document.getElementsByClassName('font__list')[0];
-const fakeFontSelected = document.getElementsByClassName('font__selected')[0];
+const fontPreviw = document.getElementById("fontTxtField");
+const fontSizeSelectBox = document.getElementById("fontSizeSelectBox");
+const fontsSelectBox = document.getElementById("fontsSelectBox");
+const chekboxList = document.getElementsByClassName("checkbox-label");
+const fakeFontBox = document.getElementsByClassName("font__list")[0];
+const fakeFontSelected = document.getElementsByClassName("font__selected")[0];
 const fakeFontBoxLiList = fakeFontBox.children;
 
 const fontarr = [];
@@ -12,40 +12,20 @@ for (let i = 0; i < fontsSelectBox.children.length; i++) {
 }
 console.log(fontarr);
 
-const fontarr2 = [...fontsSelectBox.children].map(item => item.value);
+const fontarr2 = [...fontsSelectBox.children].map((item) => item.value);
 console.log(fontarr2);
 
-const fontList = [
-  'openSans',
-  'oswald',
-  'anton',
-  'kaushanScript',
-  'rochester',
-  'sacramento',
-  'Ole',
-];
+const fontList = ["openSans", "oswald", "anton", "kaushanScript", "rochester", "sacramento", "Ole"];
 
-const fontSizeList = [
-  'font-size-16',
-  'font-size-20',
-  'font-size-40',
-  'font-size-72',
-  'font-size-92',
-];
+const fontSizeList = ["font-size-16", "font-size-20", "font-size-40", "font-size-72", "font-size-92"];
 
-const fontTransformList = [
-  'uppercase-text',
-  'lowercase-text',
-  'capitalize-text',
-];
+const fontTransformList = ["uppercase-text", "lowercase-text", "capitalize-text"];
 
 const handleFakeFontSelected = () => {
-  fakeFontBox.style.display === 'block'
-    ? (fakeFontBox.style.display = 'none')
-    : (fakeFontBox.style.display = 'block');
+  fakeFontBox.style.display === "block" ? (fakeFontBox.style.display = "none") : (fakeFontBox.style.display = "block");
 };
 
-const handleFakeFontChange = item => {
+const handleFakeFontChange = (item) => {
   const { value } = item.dataset;
   fontsSelectBox.value = value;
   const selectedFont = value;
@@ -54,66 +34,62 @@ const handleFakeFontChange = item => {
   fontPreviw.classList.add(selectedFont);
 
   for (let i of fakeFontBoxLiList) {
-    i.classList.remove('font__itemActive');
+    i.classList.remove("font__itemActive");
   }
-  item.classList.add('font__itemActive');
-  fakeFontBox.style.display = 'none';
+  item.classList.add("font__itemActive");
+  fakeFontBox.style.display = "none";
 };
 
-const handleFontChange = e => {
+const handleFontChange = (e) => {
   const selectedFont = e.target.value;
   fakeFontSelected.innerText = e.target.value;
   fontPreviw.classList.remove(...fontList);
   fontPreviw.classList.add(selectedFont);
 };
 
-const handleFontSizeChange = e => {
+const handleFontSizeChange = (e) => {
   const selectedFontSize = e.target.value;
   fontPreviw.classList.remove(...fontSizeList);
   fontPreviw.classList.add(selectedFontSize);
 };
 
-const handleFontTransform = e => {
+const handleFontTransform = (e) => {
   const selectedFontTransform = e.target.value;
-  let selectedFontTransformClassName = 'normal';
+  let selectedFontTransformClassName = "normal";
   fontPreviw.classList.remove(...fontTransformList);
 
   switch (selectedFontTransform) {
-    case 'nomal':
+    case "nomal":
       break;
-    case 'uppercase':
-      selectedFontTransformClassName = 'uppercase-text';
+    case "uppercase":
+      selectedFontTransformClassName = "uppercase-text";
       break;
-    case 'lowercase':
-      selectedFontTransformClassName = 'lowercase-text';
+    case "lowercase":
+      selectedFontTransformClassName = "lowercase-text";
       break;
-    case 'capitalize':
-      selectedFontTransformClassName = 'capitalize-text';
+    case "capitalize":
+      selectedFontTransformClassName = "capitalize-text";
       break;
     default:
       break;
   }
 
-  selectedFontTransformClassName === 'normal'
-    ? null
-    : fontPreviw.classList.add(selectedFontTransformClassName);
+  selectedFontTransformClassName === "normal" ? null : fontPreviw.classList.add(selectedFontTransformClassName);
 };
 
-fakeFontSelected.addEventListener('click', handleFakeFontSelected);
+fakeFontSelected.addEventListener("click", handleFakeFontSelected);
 
-for (let i = 0; i < fakeFontBoxLiList.length; i++) {
-  fakeFontBoxLiList[i].addEventListener('click', () =>
-    handleFakeFontChange(fakeFontBoxLiList[i])
-  );
-}
+fakeFontBox.addEventListener("click", (e) => {
+  handleFakeFontChange(e.target);
+});
 
 for (let i = 0; i < chekboxList.length; i++) {
-  chekboxList[i].addEventListener('click', handleFontTransform);
+  chekboxList[i].addEventListener("click", handleFontTransform);
 }
 
-fontsSelectBox.addEventListener('change', handleFontChange);
+fontsSelectBox.addEventListener("change", handleFontChange);
 
-fontSizeSelectBox.addEventListener('change', handleFontSizeChange);
+fontSizeSelectBox.addEventListener("change", handleFontSizeChange);
 
 // (function ($) {
 //   var fontTxt = $('#fontTxt'); // font
